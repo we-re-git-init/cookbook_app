@@ -41,4 +41,13 @@ class Api::RecipesController < ApplicationController
     @recipe.save
     render 'update.json.jb'
   end
+
+  def destroy
+    # find the recipe
+    the_id = params[:id]
+    recipe = Recipe.find_by(id: the_id)
+    # destroy the recipe
+    recipe.destroy
+    render 'destroy.json.jb'
+  end
 end
