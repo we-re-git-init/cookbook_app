@@ -1,6 +1,9 @@
 class Api::RecipesController < ApplicationController
-  def the_recipe
-    @recipe = Recipe.first
-    render 'reci.json.jb'
+  def index
+    # show ALL of the recipes
+    # get ALL the recipes from the db
+    @recipes = Recipe.all
+    # show them to the user
+    render 'index.json.jb'
   end
 end
