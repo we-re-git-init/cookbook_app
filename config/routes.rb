@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     get '/recipes/:id' => 'recipes#show'
     # create action
     post '/recipes' => 'recipes#create'
+    # update action
+    patch '/recipes/:id' => 'recipes#update'
   end
 end
