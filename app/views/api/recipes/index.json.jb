@@ -3,10 +3,15 @@
     id: recipe.id,
     chef: recipe.chef,
     title: recipe.title,
-    prep_time: recipe.hours_minutes_prep_time,
+    prep_time: recipe.prep_time,
     directions: recipe.directions,
-    ingredients: recipe.ingredients_list,
+    ingredients: recipe.ingredients,
     image_url: recipe.image_url,
-    created_at: recipe.created_at
+    created_at: recipe.created_at,
+    formatted: {
+        ingredients: recipe.ingredients_list,
+        prep_time: recipe.hours_minutes_prep_time,
+        directions: recipe.directions_list
+    }
   }
 end
