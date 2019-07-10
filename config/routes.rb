@@ -14,5 +14,13 @@ Rails.application.routes.draw do
     patch '/recipes/:id' => 'recipes#update'
     # destroy action
     delete '/recipes/:id' => 'recipes#destroy'
+
+    # signup
+    post "/users" => "users#create"
+
+    # generate a token
+    post "/sessions" => "sessions#create"
+
+
   end
 end
