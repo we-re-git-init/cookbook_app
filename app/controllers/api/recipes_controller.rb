@@ -12,6 +12,8 @@ class Api::RecipesController < ApplicationController
     # end
 
     # @recipes = @recipes.order(:id => :asc)
+    # p "i am the current_user"
+    # p current_user.name
 
     if current_user
       @recipes = Recipe.all
@@ -23,6 +25,9 @@ class Api::RecipesController < ApplicationController
   end
 
   def show
+
+    p "i am the current user"
+    p current_user
     # show one particular recipe
     # get one particular recipe from the db, based on the url, parameter
     the_id = params[:id]
@@ -33,11 +38,11 @@ class Api::RecipesController < ApplicationController
   def create
     # make a brand new recipe
     @recipe = Recipe.new(
-      chef: params[:input_chef],
       title: params[:input_title],
       ingredients: params[:input_ingredients],
       directions: params[:input_directions],
-      prep_time: params[:input_prep_time]
+      prep_time: params[:input_prep_time],
+      user_id: current_user.id
     )
     @recipe.save
     render 'create.json.jb'
