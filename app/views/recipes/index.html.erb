@@ -3,8 +3,7 @@ hello there from the index
 
 <% @recipes.each do |recipe| %>
   <p>Title: <%= recipe.title %></p>
+  <a href="/recipes/<%= recipe.id %>">Take a closer look at the recipe</a>
   <p>Ingredients: <%= recipe.ingredients %></p>
-  <p>Directions: <%= recipe.directions %></p>
-  <p>Prep Time: <%= recipe.prep_time %></p>
   <hr>
 <% end %>

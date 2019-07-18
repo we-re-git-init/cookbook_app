@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   end
 
   get '/recipes' => 'recipes#index'
+  get '/recipes/:id' => 'recipes#show'
 end
