@@ -23,4 +23,6 @@ Rails.application.routes.draw do
 
 
   end
+
+  get '/recipes' => 'recipes#index'
 end
