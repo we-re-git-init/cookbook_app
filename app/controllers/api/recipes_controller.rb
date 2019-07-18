@@ -25,14 +25,12 @@ class Api::RecipesController < ApplicationController
   end
 
   def show
-
-    p "i am the current user"
-    p current_user
     # show one particular recipe
     # get one particular recipe from the db, based on the url, parameter
     the_id = params[:id]
     @recipe = Recipe.find_by(id: the_id)
-    render 'show.json.jb'
+    # render 'show.json.jb'
+    render 'show.html.erb'
   end
 
   def create

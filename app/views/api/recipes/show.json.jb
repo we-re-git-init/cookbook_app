@@ -1,6 +1,5 @@
 {
   id: @recipe.id,
-  chef: @recipe.chef,
   directions: @recipe.directions_list,
   ingredients: @recipe.ingredients_list,
   prep_time: @recipe.prep_time,
