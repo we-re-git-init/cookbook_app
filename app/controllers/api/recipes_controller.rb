@@ -29,8 +29,8 @@ class Api::RecipesController < ApplicationController
     # get one particular recipe from the db, based on the url, parameter
     the_id = params[:id]
     @recipe = Recipe.find_by(id: the_id)
-    # render 'show.json.jb'
-    render 'show.html.erb'
+    render 'show.json.jb'
+
   end
 
   def create
