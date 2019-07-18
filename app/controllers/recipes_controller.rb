@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @users = User.all
     render 'new.html.erb'
   end
 
