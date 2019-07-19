@@ -9,3 +9,14 @@ Hi from the show action
 <p><%= @recipe.directions %></p>
 <p><%= @recipe.ingredients %></p>
 <p><%= @recipe.id %></p>
+
+
+<!-- <a href="/recipes/<%= @recipe.id %>">delete the recipe</a> -->
+
+<!-- <form action="/recipes/<%= @recipe.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete this product">
+</form> -->
+
+
+<a href="/recipes/<%= @recipe.id %>" data-method="delete" rel="nofollow">Delete the recipe</a>
