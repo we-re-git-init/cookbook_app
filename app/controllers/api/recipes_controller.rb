@@ -15,11 +15,13 @@ class Api::RecipesController < ApplicationController
     # p "i am the current_user"
     # p current_user.name
 
-    if current_user
-      @recipes = Recipe.all
-    else
-      @recipes = []
-    end
+    # if current_user
+    @recipes = Recipe.all
+    # else
+    #   @recipes = []
+    # end
+
+    p "this is working"
     # show them to the user
     render 'index.json.jb'
   end
