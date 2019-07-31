@@ -3,5 +3,6 @@
   directions: @recipe.directions,
   ingredients: @recipe.ingredients,
   prep_time: @recipe.prep_time,
-  image_url: @recipe.image_url
+  image_url: @recipe.image_url,
+  title: @recipe.title
 }

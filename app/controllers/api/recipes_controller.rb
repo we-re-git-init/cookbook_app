@@ -38,10 +38,11 @@ class Api::RecipesController < ApplicationController
   def create
     # make a brand new recipe
     @recipe = Recipe.new(
-      title: params[:input_title],
-      ingredients: params[:input_ingredients],
-      directions: params[:input_directions],
-      prep_time: params[:input_prep_time],
+      title: params[:title],
+      ingredients: params[:ingredients],
+      directions: params[:directions],
+      prep_time: params[:prep_time],
+      image_url: params[:image_url],
       user_id: current_user.id
     )
     @recipe.save
@@ -53,11 +54,11 @@ class Api::RecipesController < ApplicationController
     the_id = params[:id]
     @recipe = Recipe.find_by(id: the_id)
     # modify the item in the db (create)
-    @recipe.chef = params[:input_chef]
-    @recipe.ingredients = params[:input_ingredients]
-    @recipe.directions = params[:input_directions]
-    @recipe.prep_time = params[:input_prep_time]
-    @recipe.title = params[:input_title]
+    @recipe.chef = params[:chef]
+    @recipe.ingredients = params[:ingredients]
+    @recipe.directions = params[:directions]
+    @recipe.prep_time = params[:prep_time]
+    @recipe.title = params[:title]
     @recipe.save
     render 'update.json.jb'
   end
