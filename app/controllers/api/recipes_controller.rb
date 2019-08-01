@@ -54,11 +54,11 @@ class Api::RecipesController < ApplicationController
     the_id = params[:id]
     @recipe = Recipe.find_by(id: the_id)
     # modify the item in the db (create)
-    @recipe.chef = params[:chef]
     @recipe.ingredients = params[:ingredients]
     @recipe.directions = params[:directions]
     @recipe.prep_time = params[:prep_time]
     @recipe.title = params[:title]
+    @recipe.image_url = params[:image_url]
     @recipe.save
     render 'update.json.jb'
   end
