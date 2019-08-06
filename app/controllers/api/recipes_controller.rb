@@ -16,6 +16,7 @@ class Api::RecipesController < ApplicationController
     # p current_user.name
 
     # if current_user
+    p current_user
     @recipes = Recipe.all
     # else
     #   @recipes = []
