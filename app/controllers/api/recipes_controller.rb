@@ -44,10 +44,13 @@ class Api::RecipesController < ApplicationController
       directions: params[:directions],
       prep_time: params[:prep_time],
       image_url: params[:image_url],
-      user_id: current_user.id
+      user_id: current_user && current_user.id
     )
-    @recipe.save
-    render 'create.json.jb'
+    if @recipe.save
+      render 'create.json.jb'
+    else
+      render json: {errors: @recipe.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def update
